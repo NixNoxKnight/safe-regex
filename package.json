@@ -1,43 +1,47 @@
 {
   "name": "safe-regex",
   "version": "1.1.0",
-  "description": "detect possibly catastrophic, exponential-time regular expressions",
+  "description": "Detect potentially super-linear (\"catastrophic\") regular expressions",
   "main": "index.js",
   "dependencies": {
-    "ret": "~0.1.10"
+    "regexp-tree": "0.0.83"
   },
   "devDependencies": {
-    "tape": "^3.5.0"
+    "eslint": "^4.19.1",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-import": "^2.10.0",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-promise": "^3.7.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "mocha": "^5.0.5",
+    "eslint-plugin-mocha": "^5.0.0"
   },
   "scripts": {
-    "test": "tape test/*.js"
-  },
-  "testling": {
-    "files": "test/*.js",
-    "browsers": [
-      "ie/8", "ie/9", "ie/10", 
-      "firefox/latest",
-      "chrome/latest",
-      "opera/latest",
-      "safari/latest"
-    ]
+    "test": "npm run lint && mocha",
+    "lint": "eslint index.js test/*"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/substack/safe-regex.git"
+    "url": "git+https://github.com/davisjam/safe-regex.git"
   },
-  "homepage": "https://github.com/substack/safe-regex",
+  "homepage": "https://github.com/davisjam/safe-regex",
+  "bugs": {
+    "url": "https://github.com/davisjam/safe-regex/issues"
+  },
   "keywords": [
     "catastrophic",
-    "exponential",
+    "super-linear",
+    "backtracking",
+    "regular expression",
     "regex",
     "safe",
-    "sandbox"
+    "security",
+    "REDOS"
   ],
   "author": {
-    "name": "James Halliday",
-    "email": "mail@substack.net",
-    "url": "http://substack.net"
+    "name": "James C. Davis",
+    "email": "davisjam@vt.edu",
+    "url": "http://people.cs.vt.edu/~davisjam"
   },
   "license": "MIT"
 }
